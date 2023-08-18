@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class BackendService {
 
-  private baseUrl:String = "http://localhost:8080"
+  private baseUrl:String = "https://emailapi-production.up.railway.app"
 
   constructor(private http:HttpClient) { }
   sendEmail(data:any){
