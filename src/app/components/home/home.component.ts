@@ -7,11 +7,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private snack:MatSnackBar){
-  }
-  btnClick(){
-    console.log("btn click");
-    this.snack.open('Hello World!', "Close",);
-  }
+
   
 }
