@@ -1,22 +1,25 @@
 <div class="container">
 <div class="card">
+  <form (ngSubmit)="doSubmitForm()">
     <h1>Compose Email</h1>
     <mat-form-field class="field" appearance="outline">
         <mat-label>Recipient Email</mat-label>
-        <input matInput placeholder="Enter Recipient Email">
+        <input name="recipient" [(ngModel)]="data.recipient" matInput placeholder="Enter Recipient Email">
     </mat-form-field>
     <mat-form-field class="field" appearance="outline" >
         <mat-label>Subject</mat-label>
-        <input matInput placeholder="Enter Subject">
+        <input name="subject" [(ngModel)]="data.subject" matInput placeholder="Enter Subject">
     </mat-form-field>
     <mat-form-field class="example-full-width field" appearance="outline">
         <mat-label>Write The Message</mat-label>
-        <textarea rows="15" matInput placeholder="Compose Email"></textarea>
+        <textarea name="msg" [(ngModel)]="data.msg" rows="15" matInput placeholder="Compose Email"></textarea>
       </mat-form-field>
       <div class="text-center">
-        <button type="submit" mat-stroked-button color="primary" (click)="btnClick()">Send</button>
+        <mat-spinner class="flag" *ngIf="flag" ></mat-spinner>
+        <button [disabled]="flag" type="submit" mat-stroked-button color="primary" >Send</button>
         <button type="reset" mat-stroked-button color="accent">Reset</button>
       </div>
-
+    </form>
 </div>
 </div>
+<!-- (click)="btnClick()" -->
